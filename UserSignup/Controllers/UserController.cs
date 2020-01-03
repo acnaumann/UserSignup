@@ -34,12 +34,17 @@ namespace UserSignup.Controllers
             //user.Password == verify  --  this will not work because you are actually
             //comparing the "reference" of the strings so when a new string is created
             //it would not have the same reference as the original/comparison.
-            if (user.Password.Equals(verify))
+            if (user != null && user.Password.Equals(verify))
             {
                 return Redirect("Index?username=" + user.Username);
             }
-            ViewBag.user = user;
-            ViewBag.verify = verify;
+
+            if (user != null)
+            {
+                ViewBag.username = user.Username;
+                ViewBag.email = user.Email;
+            }
+            ViewBag.error = "Please enter valid username/password";
             return View();
         }
     }
