@@ -10,5 +10,9 @@
 
   <ItemGroup>
     <Folder Include="Views\User\" />
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="ViewModels\AddUserViewModel.cshtml" />
   </ItemGroup>
 </Project>

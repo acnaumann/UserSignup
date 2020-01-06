@@ -1,7 +1,4 @@
-﻿
-@{
-    ViewData["Title"] = "Add";
-}
+﻿@model UserSignup.ViewModels.AddUserViewModel
 
 
 <form aps-controller="User" method="post" action="Add">
@@ -9,20 +6,24 @@
         @ViewBag.error
     </p>
     <div class="form-group">
-        <label>Username: </label>
-        <input type="text" name="username" value="@ViewBag.username" />
+        <label asp-for="Username"></label>
+        <input class="form-group" asp-for="Username" />
+        <span asp-validation-for="Username"></span>
     </div>
     <div class="form-group">
-        <label>Email: </label>
-        <input type="email" name="email" value="@ViewBag.email" />
+        <label asp-for="Email"></label>
+        <input class="form-group" asp-for="Email"/>
+        <span asp-validation-for="Email"></span>
     </div>
     <div class="form-group">
-        <label>Password: </label>
-        <input type="password" name="password" />
+        <label asp-for="Password"></label>
+        <input class="form-group" asp-for="Password" />
+        <span asp-validation-for="Password"></span>
     </div>
     <div class="form-group">
-        <label>Verify Password: </label>
-        <input type="password" name="verify" />
+        <label asp-for="Verify"></label>
+        <input class="form-group" asp-for="Verify"/>
+        <span asp-validation-for="Verify"></span>
     </div>
 
     <input type="submit" value="Add user" />
