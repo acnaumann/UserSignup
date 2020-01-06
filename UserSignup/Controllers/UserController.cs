@@ -5,10 +5,8 @@ namespace UserSignup.Controllers
 {
     public class UserController : Controller 
     {
-
-
         //GET: /<controller>/
-        public IActionResult Index(string username )
+        public IActionResult Index(string username = "User" )
         {
             //User user = new User("Alysson", "alysson.seevers@gmail.com", "password");
             //User user = new User();
@@ -16,14 +14,12 @@ namespace UserSignup.Controllers
             return View();
         }
 
-
         //GET /User/Add
         public IActionResult Add()
         {
             AddUserViewModel addUserViewModel = new AddUserViewModel();
             return View(addUserViewModel);
         }
-
 
         //POST /User/Add
         [HttpPost]
@@ -34,9 +30,6 @@ namespace UserSignup.Controllers
 
                 return Redirect("/User/Index?username=" + addUserViewModel.Username);
             }
-            //user.Password == verify  --  this will not work because you are actually
-            //comparing the "reference" of the strings so when a new string is created
-            //it would not have the same reference as the original/comparison.
 
             return View(addUserViewModel);
             

@@ -14,7 +14,7 @@ namespace UserSignup.ViewModels
 
         [Required]
         [DataType(DataType.Password)]
-        [StringLength(20, MinimumLength = 6, ErrorMessage ="Password is not long enough")]
+        [StringLength(20, MinimumLength = 6, ErrorMessage ="Password is not long enough")]  //MinimumLength is a named 
         public string Password { get; set; }
 
         [Required]
